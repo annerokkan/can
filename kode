@@ -7,5 +7,9 @@ can_main <- data.frame(can_main)
 #creating a dummy for when cannabis was legalized: 
 can_main$d_alabama <- 0
 can_main$d_alaska <- 0
+# Continue this for all the states
+
+#Filling inn the dummy with 1 after the state legalized. 
+can_main$d_alabama <- ifelse(can_main$year >= 2015, 1,0)
 
 
