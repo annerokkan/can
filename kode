@@ -1,15 +1,16 @@
 library(readxl)
 
-#Importing data
-can_main <- read_excel("C:/Users/s13476/OneDrive - Norges Handelshøyskole/Masterveiledning/Anne/Cannabis.xlsx",sheet = 2, col_names = TRUE)
+#Importing data on consumtion and states
+can_main <- read_excel("C:/Users/s13476/OneDrive - Norges Handelshøyskole/Masterveiledning/Anne/Cannabis.xlsx",sheet = 1, col_names = TRUE)
 can_main <- data.frame(can_main)
 
-#creating a dummy for when cannabis was legalized: 
-can_main$d_alabama <- 0
-can_main$d_alaska <- 0
-# Continue this for all the states
+#importing data on year of legalization 
+legal <- read_excel("C:/Users/s13476/OneDrive - Norges Handelshøyskole/Masterveiledning/Anne/Cannabis.xlsx",sheet = 2, col_names = TRUE)
+legal <- data.frame(legal)
 
 #Filling inn the dummy with 1 after the state legalized. 
-can_main$d_alabama <- ifelse(can_main$year >= 2015, 1,0)
+can_main$leg_alaska <- 0
+can_main$leg_alaska <- ifelse(can_main$year >= 2015 & can_main$state == "Alaska", 1,0)
 
-
+can_main$leg_cali <- 0
+can_main$leg_alaska <- ifelse(can_main$year >= 2017 & can_main$state == "California", 1,0)
