@@ -1,0 +1,9 @@
+library(readxl)
+
+#Importing data
+can_main <- read_excel("C:/Users/s13476/OneDrive - Norges Handelshøyskole/Masterveiledning/Anne/Cannabis.xlsx",sheet = 2, col_names = TRUE)
+can_main <- data.frame(can_main)
+
+#create a dummy for when cannabis was legalized: 
+can_main$d_alabama <- 0
+
