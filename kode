@@ -13,4 +13,4 @@ can_main$leg_alaska <- 0
 can_main$leg_alaska <- ifelse(can_main$year >= 2015 & can_main$state == "Alaska", 1,0)
 
 can_main$leg_cali <- 0
-can_main$leg_alaska <- ifelse(can_main$year >= 2017 & can_main$state == "California", 1,0)
+can_main$leg_cali <- ifelse(can_main$year >= 2017 & can_main$state == "California", 1,0)
