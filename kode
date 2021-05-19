@@ -18,7 +18,19 @@ only_legal <- legal[complete.cases(legal$leg_year),]
 #creating a dummy for states that have legalized
 can_main$legal_dummy <- 0
 
+for(i in 1:nrow(main_ro)){
+  for(j in 1:nrow(enforcement_ro_collapsed)){ 
+    if(main_ro$buyer_city[i] %in% treated_cities){ 
+            main_ro$treated_dummy[i] <- "1" 
+    } else {
+            main_ro$treated_dummy[i] <- "0" 
+            }
+  }
+  print(i)
+}
+
 #graphical summary
 ggplot(can_main, aes(x= year, y= use, group = state, color= state))+
   geom_line()+
   geom_point()
+
