@@ -35,9 +35,15 @@ can_main$legal_year_dummy <- 0
 #creating a dummy for each state and the years that they have legalised. 
 can_main$leg_alaska <- ifelse(can_main$state %in% "Alaska" & can_main$year >= "2015",1,0)
 can_main$leg_california <- ifelse(can_main$state %in% "California" & can_main$year >= "2017",1,0)
-
-#FORTSETT HER MED RESTEN AV STATENE SOM HAR LEGALISERT.DER DET ER XXX ER DER DU ENDRER INFO:
-can_main$XXXXX <- ifelse(can_main$state %in% "XXXX" & can_main$year >= "XXXX",1,0)
+can_main$leg_colorado <- ifelse(can_main$state %in% "Colorado" & can_main$year >= "2013",1,0)
+can_main$leg_illinois <- ifelse(can_main$state %in% "Illinois" & can_main$year >= "2019",1,0)
+can_main$leg_maine <- ifelse(can_main$state %in% "Maine" & can_main$year >= "2017",1,0)
+can_main$leg_massachusetts <- ifelse(can_main$state %in% "Massachusetts" & can_main$year >= "2017",1,0)
+can_main$leg_michigan <- ifelse(can_main$state %in% "Michigan" & can_main$year >= "2019",1,0)
+can_main$leg_nevada <- ifelse(can_main$state %in% "Nevada" & can_main$year >= "2017",1,0)
+can_main$leg_oregon <- ifelse(can_main$state %in% "Oregon" & can_main$year >= "2015",1,0)
+can_main$leg_vermont <- ifelse(can_main$state %in% "Vermont" & can_main$year >= "2018",1,0)
+can_main$leg_washington <- ifelse(can_main$state %in% "Washington" & can_main$year >= "2013",1,0)
 
 
 can_main$did <- paste(can_main$leg_alaska,
